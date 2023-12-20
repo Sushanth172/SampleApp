@@ -1,8 +1,3 @@
-#!/usr/bin/make -f
-# -*- makefile -*-
-# Sample debian/rules that uses debhelper.
-# This file was originally written by Joey Hess and Craig Small.
-# As a special exception, when this file is copied by dh-make into a
 # dh-make output file, you may use that output file without restriction.
 # This special exception was added by Craig Small in version 0.37 of dh-make.
 
@@ -14,7 +9,7 @@ builddir:
 	mkdir -p builddir
 
 builddir/Makefile: builddir
-	cd builddir && qmake PREFIX=/usr ../Source/camApp/$(APPNAME).pro
+	cd builddir && qmake PREFIX=/usr ../src/$(APPNAME).pro
 
 build:	build-stamp
 
@@ -38,8 +33,8 @@ install: build
 	dh_installdirs
 
 	# Add here commands to install the package into debian/your_appname
-	cd builddir && cp -f -R ${CURDIR} ${CURDIR}/debian/qtcam/usr/share/qml/ && cp ${CURDIR}/qtcam/src/Qtcam_16.04.desktop ${CURDIR}/debian/qtcam/usr/share/applications/ && install -m 755 -p "camApp" "${CURDIR}/debian/qtcam/usr/bin/qtcam"
-
+	cd builddir && cp -f -R ${CURDIR}/Source/camApp/main.qml ${CURDIR}/debian/qtcam/usr/share/qml/ && cp ${CURDIR}/Source/camApp/camApp.desktop ${CURDIR}/debian/qtcam/usr/share/applications/ && install -m 755 -p "camApp" "${CURDIR}/debian/qtcam/usr/bin/qtcam"
+  
 # Build architecture-independent files here.
 binary-indep: build install
 # We have nothing to do by default.
@@ -52,7 +47,7 @@ binary-arch: build install
 	dh_installexamples
 	dh_installman
 	dh_link
-	dh_strip 
+	dh_strip
 	dh_compress
 	dh_fixperms
 	dh_installdeb
