@@ -1,7 +1,7 @@
-Source: qtcam
+Source: SampleApp	
 Section: video
 Priority: extra
-Maintainer: econsysqtcam <qtcam@e-consystems.com>
+Maintainer: infradeveconsys <infradev@e-consystems.com>
 Build-Depends: debhelper (>= 9.0.0), libv4l-dev, qt5-default, libavcodec-dev, libavformat-dev, libavutil-dev, libswscale-dev, libavresample-dev, libudev-dev, libavcodec-extra, qt5-default, qtdeclarative5-dev, freeglut3, freeglut3-dev, libjpeg-turbo8-dev, libusb-1.0-0-dev, libusb-dev, libevdev-dev, libpulse-dev, qtmultimedia5-dev, libasound2-dev , libturbojpeg0-dev ,g++-5 ,lsb-core,lsb-release
 Standards-Version: 3.9.3
 Homepage: http://www.e-consystems.com/opensource-linux-webcam-software-application.asp

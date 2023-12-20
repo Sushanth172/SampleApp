@@ -9,7 +9,7 @@ builddir:
 	mkdir -p builddir
 
 builddir/Makefile: builddir
-	cd builddir && qmake PREFIX=/usr ../src/$(APPNAME).pro
+	cd builddir && qmake PREFIX=/usr ../Source/camApp/camApp.pro
 
 build:	build-stamp
 
@@ -34,26 +34,4 @@ install: build
 
 	# Add here commands to install the package into debian/your_appname
 	cd builddir && cp -f -R ${CURDIR}/Source/camApp/main.qml ${CURDIR}/debian/qtcam/usr/share/qml/ && cp ${CURDIR}/Source/camApp/camApp.desktop ${CURDIR}/debian/qtcam/usr/share/applications/ && install -m 755 -p "camApp" "${CURDIR}/debian/qtcam/usr/bin/qtcam"
-  
-# Build architecture-independent files here.
-binary-indep: build install
-# We have nothing to do by default.
 
-# Build architecture-dependent files here.
-binary-arch: build install
-	dh_testdir
-	dh_testroot
-	dh_installdocs
-	dh_installexamples
-	dh_installman
-	dh_link
-	dh_strip
-	dh_compress
-	dh_fixperms
-	dh_installdeb
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
-
-binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install configure
