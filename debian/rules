@@ -38,7 +38,8 @@ install: build
 	dh_installdirs
 
 	# Add here commands to install the package into debian/your_appname
-	cd builddir && cp -f -R ${CURDIR}/Source/camApp/ ${CURDIR}/Source/camApp/ && cp ${CURDIR}/Source/camApp/Qtcam_16.04.desktop ${CURDIR}/debian/qtcam/usr/share/applications/ && install -m 755 -p "camApp" "${CURDIR}"
+	cd builddir && cp -f -R ${CURDIR} ${CURDIR}/debian/qtcam/usr/share/qml/ && cp ${CURDIR}/qtcam/src/Qtcam_16.04.desktop ${CURDIR}/debian/qtcam/usr/share/applications/ && install -m 755 -p "camApp" "${CURDIR}/debian/qtcam/usr/bin/qtcam"
+
 # Build architecture-independent files here.
 binary-indep: build install
 # We have nothing to do by default.
