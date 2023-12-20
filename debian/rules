@@ -9,7 +9,7 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 export DEB_BUILD_OPTIONS=verbose
-APPNAME := qtcam
+APPNAME := camApp
 builddir:
 	mkdir -p builddir
 
@@ -38,7 +38,7 @@ install: build
 	dh_installdirs
 
 	# Add here commands to install the package into debian/your_appname
-	cd builddir && cp -f -R ${CURDIR}/Source/camApp/ ${CURDIR}/Source/camApp/ && install -m 755 -p "Qtcam" "${CURDIR}"
+	cd builddir && cp -f -R ${CURDIR}/Source/camApp/ ${CURDIR}/Source/camApp/ && install -m 755 -p "camApp" "${CURDIR}"
 # Build architecture-independent files here.
 binary-indep: build install
 # We have nothing to do by default.
