@@ -1,4 +1,4 @@
-qtcam (26.0.1-0ubuntu1) bionic; urgency=medium
+qtcam (26.0.2-0ubuntu1) bionic; urgency=medium
  *Added New HID controls in See3CAM_CU512_M
  *Added Latest Code.
  *See3CAM_CU83 live release testing
